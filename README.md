@@ -4,13 +4,21 @@ A comprehensive job portal platform designed to enable seamless interaction betw
 
 💡 Key Features
 1.Responsive Design: Fully responsive across mobile, tablet, and desktop.
+
 2.Authentication System: Email/password login, Google login, account recovery, and protected routes.
+
 3.Job Management: Add, update, delete, and view job postings.
+
 4.Job Search & Filters: Search jobs by title and filter by job type, experience level, and salary range.
+
 5.Job Applications: Apply for jobs with detailed forms and manage your applications.
+
 6.Employer Tools: Employers can review applications, update jobs, and manage postings.
+
 7.Error Handling: User-friendly error messages and loading indicators.
+
 8.Session Management: Secure session management with JWT tokens.
+
 
 🛠️ Technologies Used
 Frontend: React.js, Tailwind CSS, DaisyUI
