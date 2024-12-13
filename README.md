@@ -3,7 +3,9 @@ A comprehensive job portal platform designed to enable seamless interaction betw
 
 
 💡 Key Features
+
 1.Responsive Design: Fully responsive across mobile, tablet, and desktop.
+
 2.Authentication System: Email/password login, Google login, account recovery, and protected routes.
 
 3.Job Management: Add, update, delete, and view job postings.
