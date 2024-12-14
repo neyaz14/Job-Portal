@@ -27,7 +27,7 @@ const JobApply = () => {
             github,
             resume
         }
-
+  
         fetch('http://localhost:5000/job-applications', {
             method: 'POST',
             headers: {
@@ -50,6 +50,7 @@ const JobApply = () => {
                 }
             })
 
+            
     }
     return (
         <div className='my-7 space-y-5'>
