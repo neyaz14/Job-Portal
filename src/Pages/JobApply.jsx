@@ -8,7 +8,7 @@ const JobApply = () => {
     const navigate = useNavigate();
     const { _id, title, company, applicationDeadline, category, requirements, status, hr_email, hr_name, company_logo } = job;
     const { user } = useContext(AuthContext);
-    // console.log(user)
+    console.log(user)
     const {id}= useParams();
     // console.log(id, _id);
 
@@ -37,6 +37,7 @@ const JobApply = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 console.log('success')
                 if (data.insertedId) {
                     Swal.fire({
