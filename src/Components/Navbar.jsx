@@ -14,7 +14,9 @@ const Navbar = () => {
         <li><NavLink to={'/myPostedJobs'}>My Posted Jobs</NavLink></li>
         {/* <li><NavLink>Review Aplications</NavLink></li> */}
         {/* <li><NavLink>Update Job</NavLink></li> */}
-    </>
+    </> 
+
+    
 
 
     const handleSignOut = () => {
