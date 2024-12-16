@@ -9,6 +9,7 @@ import PrivateRoute from '../Privateroute/PrivateRoute';
 import JobApply from '../Pages/JobApply';
 import MyApplications from '../Pages/MyApplications';
 import AddJob from '../Pages/AddJob';
+import MyPostedJobs from '../Pages/MyPostedJobs';
 
 
     const Router = createBrowserRouter([
@@ -33,6 +34,9 @@ import AddJob from '../Pages/AddJob';
             },{
               path: '/addjob',
               element: <PrivateRoute><AddJob></AddJob></PrivateRoute>
+            },{
+              path: '/myPostedJobs',
+              element: <PrivateRoute><MyPostedJobs></MyPostedJobs></PrivateRoute>
             },
             {
               path:'/jobs/:id',

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../Auth/AuthProvider';
 
 const AddJob = () => {
     const navigate = useNavigate();
+
+    const {user }= useContext(AuthContext)
 
 
 
@@ -11,13 +14,12 @@ const AddJob = () => {
         e.preventDefault();
 
         const formData = new FormData(e.target);
-        const initalData = Object.fromEntries(formData.entries());
-        // console.log(initalData);
-        const {min, max, currency, ...newJob} = initalData;
-        // console.log(newJob);
-        newJob.salaryRange = {max, min, currency};
+        const initialData = Object.fromEntries(formData.entries());
+        const { min, max, currency, ...newJob } = initialData;
+        console.log(min, max, currency, newJob)
+        newJob.salaryRange = { min, max, currency }
         newJob.requirements = newJob.requirements.split('\n');
-        newJob.responsibilities = newJob.responsibilities.split('\n');
+        newJob.responsibilities = newJob.responsibilities.split('\n')
         console.log(newJob);
 
         fetch('http://localhost:5000/jobs', {
@@ -27,18 +29,18 @@ const AddJob = () => {
             },
             body: JSON.stringify(newJob)
         })
-        .then(res=> res.json())
-        .then(data=> {
-            if (data.insertedId) {
-                Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "Job Has been added.",
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                // navigate('/myPostedJobs')
-            }
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Job Has been added.",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    navigate('/myPostedJobs')
+                }
             })
 
     }
@@ -146,7 +148,7 @@ const AddJob = () => {
                     <label className="label">
                         <span className="label-text">HR Email</span>
                     </label>
-                    {/* <input type="text" defaultValue={user?.email} name='hr_email' placeholder="HR Email" className="input input-bordered" required /> */}
+                    <input type="text" defaultValue={user?.email} name='hr_email' placeholder="HR Email" className="input input-bordered" required />
                 </div>
                 {/* application Deadline */}
                 <div className="form-control">

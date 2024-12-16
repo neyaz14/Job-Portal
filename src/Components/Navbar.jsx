@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><NavLink to={'/addjob'}>Add Job</NavLink></li>
         {/* <li><NavLink>Apply for Job</NavLink></li> */}
         <li><NavLink to={'/myApplications'}>My Apllications</NavLink></li>
-        {/* <li><NavLink>My Job Posts</NavLink></li> */}
+        <li><NavLink to={'/myPostedJobs'}>My Posted Jobs</NavLink></li>
         {/* <li><NavLink>Review Aplications</NavLink></li> */}
         {/* <li><NavLink>Update Job</NavLink></li> */}
     </>
