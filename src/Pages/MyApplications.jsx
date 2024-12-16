@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import { useContext } from 'react';
 import { AuthContext } from '../Auth/AuthProvider';
+import axios from 'axios';
+import { withOptions } from 'tailwindcss/plugin';
 
 const MyApplications = () => {
     // const { user } = useAuth();
@@ -9,9 +11,15 @@ const MyApplications = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/job-applications?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => setJobs(data))
+
+// we will use axios isnted of fetch 
+        // fetch(`http://localhost:5000/job-applications?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => setJobs(data))
+
+        axios.get(`http://localhost:5000/job-applications?email=${user.email}`, {withCredentials:true})
+        .then(res=> console.log(setJobs(res.data)))
+
     }, [user.email])
 
     return (
