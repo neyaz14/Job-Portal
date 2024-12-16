@@ -6,7 +6,7 @@ const Navbar = () => {
 
     const { user, signout } = useContext(AuthContext);
     const links = <>
-        <li><NavLink>All Jobs</NavLink></li>
+        <li><NavLink to={'/'}>All Jobs</NavLink></li>
         {/* <li><NavLink to={'/jobDetails'}>Job Details</NavLink></li> */}
         <li><NavLink to={'/addjob'}>Add Job</NavLink></li>
         {/* <li><NavLink>Apply for Job</NavLink></li> */}
