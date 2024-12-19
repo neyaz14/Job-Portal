@@ -19,13 +19,15 @@ const Login = () => {
         login(email, password)
         .then(res=> {
             navigate(from);
-            console.log(res.user)
+            // console.log(res.user)
             // const user = {email: res.user.email}
             // used axios isnted of fetch()
             // axios.post('http://localhost:5000/jwt', user,{withCredentials:true})
             // .then(res=> console.log(res.data))
         })
-        .catch(err=>{console.log(err.message)})
+        .catch(err=>{
+            // console.log(err.message)
+        })
     }
     return (
         <div>

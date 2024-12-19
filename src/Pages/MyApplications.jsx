@@ -4,12 +4,14 @@ import { useContext } from 'react';
 import { AuthContext } from '../Auth/AuthProvider';
 import axios from 'axios';
 import { withOptions } from 'tailwindcss/plugin';
+import useAxiosSecure from '../Hooks/useAxiosSecure';
 
 const MyApplications = () => {
     // const { user } = useAuth();
     const {user} = useContext(AuthContext);
     const [jobs, setJobs] = useState([]);
-
+    
+    const axiosSecure  = useAxiosSecure();
     useEffect(() => {
 
 // we will use axios isnted of fetch 
@@ -17,7 +19,7 @@ const MyApplications = () => {
         //     .then(res => res.json())
         //     .then(data => setJobs(data))
 
-        axios.get(`http://localhost:5000/job-applications?email=${user.email}`, {withCredentials:true})
+        axiosSecure.get(`/job-applications?email=${user.email}`)
         .then(res=> setJobs(res.data))
 
     }, [user.email])

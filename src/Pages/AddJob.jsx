@@ -16,11 +16,11 @@ const AddJob = () => {
         const formData = new FormData(e.target);
         const initialData = Object.fromEntries(formData.entries());
         const { min, max, currency, ...newJob } = initialData;
-        console.log(min, max, currency, newJob)
+        // console.log(min, max, currency, newJob)
         newJob.salaryRange = { min, max, currency }
         newJob.requirements = newJob.requirements.split('\n');
         newJob.responsibilities = newJob.responsibilities.split('\n')
-        console.log(newJob);
+        // console.log(newJob);
 
         fetch('http://localhost:5000/jobs', {
             method: 'POST',
